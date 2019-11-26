@@ -2,7 +2,7 @@ package br.com.accurate.advanced.coding;
 
 class Mdc {
 
-    // Euclid
+    // Algoritimo de Euclides
     private static int mdc(int m, int n) {
         if(n == 0)
             return m;
