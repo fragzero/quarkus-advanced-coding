@@ -1,21 +1,33 @@
 package br.com.accurate.advanced.coding;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
-@Path("/algoritimo1/{m}/{n}")
+@Path("/api")
 public class algoritimo1 {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public int mdc(@PathParam int m, @PathParam int n) {
+    @Path("/algoritimoUm/{m}/{n}")
+    public int algoritimoUmGet(@PathParam int m, @PathParam int n) {
+        return mdc(m, n);
+    }
 
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/algoritimoUm")
+    public Resultado algoritimoUmPost(Numeros num) {
+        Resultado r = new Resultado();
+        r.setR(mdc(num.getM(), num.getN()));
+        return r;
+    }
+
+    private int mdc(int m, int n) {
         if(n == 0)
             return m;
-
         return mdc(n, m % n);
     }
+
 }

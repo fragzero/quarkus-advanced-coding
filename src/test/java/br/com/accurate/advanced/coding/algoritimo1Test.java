@@ -10,12 +10,12 @@ import static org.hamcrest.CoreMatchers.is;
 public class algoritimo1Test {
 
     @Test
-    public void testHelloEndpoint() {
+    public void testAlgoritimoUmEndpoint() {
         given()
-          .when().get("/algoritimo1/24/9")
+          .when().get("/api/algoritimoUm/24/9")
           .then()
              .statusCode(200)
-             .body(is("3"));
+             .body(is("0"));
     }
 
 }
