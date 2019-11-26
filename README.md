@@ -7,23 +7,24 @@
 
 ## Criar novo projeto quarkus
 ```sh
-$ mvnw io.quarkus:quarkus-maven-plugin:1.0.0.CR1:create
--DprojectGroupId=br.com.accurate
--DprojectArtifactId=advanced-coding
--DclassName="br.com.accurate.advanced.coding.algoritimo1"
--Dpath="/algoritimo-um"
+$ mvn io.quarkus:quarkus-maven-plugin:1.0.0.CR1:create \
+-DprojectGroupId=br.com.accurate \
+-DprojectArtifactId=advanced-coding \
+-DclassName="br.com.accurate.advanced.coding.Algoritimo1" \
+-Dpath="/algoritimo-um" \
 -Dextensions=openapi,resteasy-jsonb,swagger-ui
 ```
 
 ## Compilar executar
 ```sh
-$ mvnw compile quarkus:dev
+$ mvn compile quarkus:dev
 ```
 
-## Exemplo GET
+## Exemplos
+### GET
 http://localhost:8080/algoritimo-um/get/24/60
 
-## Exemplo POST - 2 numeros
+### POST - 2 numeros
 ```json
 {
     "m": 24,
@@ -32,7 +33,7 @@ http://localhost:8080/algoritimo-um/get/24/60
 ```
 http://localhost:8080/algoritimo-um/post
 
-## Exemplo POST - List
+### POST - List
 ```json
 {
   "n": [24,60]
@@ -40,5 +41,5 @@ http://localhost:8080/algoritimo-um/post
 ```
 http://localhost:8080/algoritimo-um/list
 
-## Documentacao API - Swagger
+## Swagger
 http://localhost:8080/swagger-ui/
