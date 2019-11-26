@@ -26,8 +26,8 @@ http://localhost:8080/algoritimo-um/get/24/60
 ## Exemplo POST - 2 numeros
 ```json
 {
-    m: 24
-    n: 60
+    "m": 24
+    "n": 60
 }
 ```
 http://localhost:8080/algoritimo-um/post
