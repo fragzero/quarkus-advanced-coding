@@ -4,30 +4,25 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
-@Path("/api")
-public class algoritimo1 {
+@Path("/algoritimo-um")
+public class Algoritimo1 {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    @Path("/algoritimoUm/{m}/{n}")
+    @Path("/get/{m}/{n}")
     public int algoritimoUmGet(@PathParam int m, @PathParam int n) {
-        return mdc(m, n);
+        return Mdc.mdc(m, n);
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/algoritimoUm")
+    @Path("/post")
     public Resultado algoritimoUmPost(Numeros num) {
         Resultado r = new Resultado();
-        r.setR(mdc(num.getM(), num.getN()));
+        r.setR(Mdc.mdc(num.getM(), num.getN()));
         return r;
     }
 
-    private int mdc(int m, int n) {
-        if(n == 0)
-            return m;
-        return mdc(n, m % n);
-    }
 
 }
