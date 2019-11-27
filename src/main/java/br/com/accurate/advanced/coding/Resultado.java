@@ -1,13 +1,10 @@
 package br.com.accurate.advanced.coding;
 
 public class Resultado {
-    int r;
+    public int resultado;
 
-    public int getR() {
-        return r;
+    public Resultado(int resultado) {
+        this.resultado = resultado;
     }
 
-    public void setR(int r) {
-        this.r = r;
-    }
 }

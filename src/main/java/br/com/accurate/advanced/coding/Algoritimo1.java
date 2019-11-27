@@ -2,36 +2,37 @@ package br.com.accurate.advanced.coding;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
-@Path("/algoritimo-um")
+@Path("/algoritimo-1")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class Algoritimo1 {
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    @Path("/get/{m}/{n}")
-    public int algoritimoUmGet(@PathParam int m, @PathParam int n) {
-        return Mdc.mdcBF(m, n);
+    @Path("/mdc/{m}/{n}")
+    public Response algoritimoUmGet(@PathParam int m, @PathParam int n) {
+        return Response.ok(Mdc.mdcBF(m, n)).build();
+    }
+
+    @GET
+    @Path("/mdc2/{m}/{n}")
+    public Resultado algoritimoUmGet2(@PathParam int m, @PathParam int n) {
+        return new Resultado(Mdc.mdcStein(m, n));
     }
 
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/post")
-    public Resultado algoritimoUmPost(Numeros n) {
-        Resultado r = new Resultado();
-        r.setR(Mdc.mdcStein(n.getM(), n.getN()));
-        return r;
+    @Path("/mdc")
+    public Response algoritimoUmPost(Numeros n) {
+        return Response.ok(new Resultado(Mdc.mdcStein(n.getM(), n.getN()))).build();
     }
 
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/list")
+    @Path("/mdc/list")
     public Resultado algoritimoUmList(NumerosList n) {
-        Resultado r = new Resultado();
-        r.setR(Mdc.mdcList(n.getN()));
-        return r;
+        return new Resultado(Mdc.mdcList(n.getN()));
     }
 
 }

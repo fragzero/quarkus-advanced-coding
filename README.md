@@ -20,26 +20,22 @@ $ mvn io.quarkus:quarkus-maven-plugin:1.0.0.CR1:create \
 $ mvn compile quarkus:dev
 ```
 
-## Exemplos
+## Documentacao API
+http://localhost:8080/swagger-ui/
+
+## Alguns exemplos
 ### GET
-http://localhost:8080/algoritimo-um/get/24/60
+http://localhost:8080/algoritimo-1/mdc/24/60
 
 ### POST - 2 numeros
 ```json
-{
-    "m": 24,
-    "n": 60
-}
+{ "m": 24, "n": 60 }
 ```
-http://localhost:8080/algoritimo-um/post
+http://localhost:8080/algoritimo-1/mdc
 
-### POST - List
+### POST - Lista
 ```json
-{
-  "n": [24,60]
-}
+{ "n": [24,60,300] }
 ```
-http://localhost:8080/algoritimo-um/list
+http://localhost:8080/algoritimo-1/mdc/list
 
-## Swagger
-http://localhost:8080/swagger-ui/
