@@ -12,10 +12,10 @@ class Algoritimo1Test {
     @Test
     void testAlgoritimoUmEndpoint() {
         given()
-          .when().get("/algoritimo-um/mdc/24/9")
+          .when().get("/algoritimo-1/mdc/24/60")
           .then()
              .statusCode(200)
-             .body(is("0"));
+             .body(is("12"));
     }
 
 }
