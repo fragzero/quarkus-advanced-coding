@@ -39,3 +39,8 @@ http://localhost:8080/algoritimo-1/mdc
 ```
 http://localhost:8080/algoritimo-1/mdc/list
 
+### POST - Algoritimo 4
+```
+2010-01-01 10:00:00
+```
+http://localhost:8080/algoritimo-4/
